@@ -9,5 +9,6 @@ class ColorUtils{
   static const Color green = Color(0xFF3CB371); // Green (Success/Active Button)
   static const Color red = Color(0xFFF44336); // Red (Error/Alert)
   static const Color lightGrey=Colors.black54;
+  static const Color blackColor=Colors.black;
 
 }

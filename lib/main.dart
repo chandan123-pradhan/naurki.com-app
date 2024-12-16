@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:naukri_app/ui/auth/provider/auth_provider_controller.dart';
-import 'package:naukri_app/ui/splash/provider/splash_provider_controller.dart';
+import 'package:naukri_app/module/auth/provider/auth_provider_controller.dart';
+import 'package:naukri_app/module/auth/ui/complete_profile.dart';
+import 'package:naukri_app/module/dashboard/provider/dashboard_provider.dart';
+import 'package:naukri_app/module/splash/provider/splash_provider_controller.dart';
 import 'package:naukri_app/utils/app_routes.dart';
 import 'package:provider/provider.dart';  // Import the provider package
 
@@ -10,7 +12,8 @@ void main() {
    MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SplashProviderController()),
-        ChangeNotifierProvider(create: (context)=>AuthProviderController())
+        ChangeNotifierProvider(create: (context)=>AuthProviderController()),
+        ChangeNotifierProvider(create: (context)=>DashboardProvider())
       ],
       child: const MyApp(),
     ),

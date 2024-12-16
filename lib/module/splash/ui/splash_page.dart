@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naukri_app/ui/splash/provider/splash_provider_controller.dart';
+import 'package:naukri_app/module/splash/provider/splash_provider_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:naukri_app/utils/app_routes.dart';
 import 'package:naukri_app/utils/image_utils.dart';
@@ -64,8 +64,8 @@ class SplashPage extends StatelessWidget {
     return Container(
       height: height / 3,
       alignment: Alignment.center,
-      child: ImateUtils.getImage(
-        image: ImateUtils.AppLogoImage,
+      child: ImageUtils.getImage(
+        image: ImageUtils.AppLogoImage,
         height: height / 3,
         width: width / 2.5,
       ),

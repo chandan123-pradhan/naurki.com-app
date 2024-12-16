@@ -46,6 +46,36 @@ Text headingH4({required String text,required BuildContext context}){
 
 }
 
+Text headingH5({required String text,required BuildContext context,
+Color color=ColorUtils.primaryBlue
+
+}){
+  return Text(
+    text,
+    style: GoogleFonts.inriaSans(
+    textStyle: Theme.of(context).textTheme.displayLarge,
+    fontSize: 16,
+    color: color,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.italic,
+  ),
+  );
+}
+Text headingH6({required String text,required BuildContext context,
+Color color=ColorUtils.primaryBlue
+
+}){
+  return Text(
+    text,
+    style: GoogleFonts.inriaSans(
+    textStyle: Theme.of(context).textTheme.displayLarge,
+    fontSize: 16,
+    color: color,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.italic,
+  ),
+  );
+}
 
 
 Text headingH10({required String text,required BuildContext context,
@@ -80,6 +110,29 @@ Color color=ColorUtils.lightGrey
     style: GoogleFonts.lato(
     textStyle: Theme.of(context).textTheme.displayLarge,
     fontSize: 10,
+    color: 
+    isHyperLink?ColorUtils.primaryBlue : color,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.italic,
+  ),
+  );
+
+}
+
+
+
+
+
+Text headingH12({required String text,required BuildContext context,
+bool isHyperLink=false,
+Color color=ColorUtils.lightGrey
+
+}){
+  return Text(
+    text,
+    style: GoogleFonts.lato(
+    textStyle: Theme.of(context).textTheme.displayLarge,
+    fontSize: 12,
     color: 
     isHyperLink?ColorUtils.primaryBlue : color,
     fontWeight: FontWeight.w500,
