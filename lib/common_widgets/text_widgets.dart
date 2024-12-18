@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naukri_app/utils/color_utils.dart';
 
@@ -61,11 +62,23 @@ Color color=ColorUtils.primaryBlue
   ),
   );
 }
-Text headingH6({required String text,required BuildContext context,
-Color color=ColorUtils.primaryBlue
+dynamic headingH6({required String text,required BuildContext context,
+Color color=ColorUtils.primaryBlue, bool isSelectable=false
 
 }){
-  return Text(
+  return 
+  isSelectable?
+  SelectableText(
+    text,
+    style: GoogleFonts.inriaSans(
+    textStyle: Theme.of(context).textTheme.displayLarge,
+    fontSize: 16,
+    color: color,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.italic,
+  ),
+  ):
+  Text(
     text,
     style: GoogleFonts.inriaSans(
     textStyle: Theme.of(context).textTheme.displayLarge,
@@ -85,6 +98,7 @@ Color color=ColorUtils.lightGrey
 }){
   return Text(
     text,
+    overflow: TextOverflow.ellipsis,
     style: GoogleFonts.lato(
     textStyle: Theme.of(context).textTheme.displayLarge,
     fontSize: 14,

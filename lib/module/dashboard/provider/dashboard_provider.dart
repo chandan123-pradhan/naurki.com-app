@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naukri_app/module/applies/ui/applies_page.dart';
 import 'package:naukri_app/module/home/ui/home_page.dart';
+import 'package:naukri_app/module/profile/ui/profile_page.dart';
 
 class DashboardProvider extends ChangeNotifier{
   int currentPage=0;
@@ -8,7 +9,7 @@ class DashboardProvider extends ChangeNotifier{
   List<Widget>screens=[
     HomePage(),
     AppliedPage(),
-    HomePage(),
+    ProfilePage(),
     HomePage()
   ];
 

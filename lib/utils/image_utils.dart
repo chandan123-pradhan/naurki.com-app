@@ -19,6 +19,9 @@ class ImageUtils{
   static const String Experience='assets/icons/experience.png';
   static const String Status='assets/icons/status.png';
   static const String Call='assets/icons/call.png';
+  static const String MyPic='assets/icons/my_img.jpeg';
+  static const String EditIcon='assets/icons/edit.png';
+  static const String HelloIcon='assets/icons/hello.png';
   static Widget getImage({required String image,double? height, double? width}){
       return Image.asset(image,
       height: height,
