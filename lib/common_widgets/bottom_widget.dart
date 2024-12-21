@@ -9,13 +9,14 @@ class BottomWidget {
     required BuildContext context,
     required String title,
     Color color = ColorUtils.primaryBlue,
+    double? width,
     required VoidCallback onPressed, // Adding onPressed callback
   }) {
     return GestureDetector(
       onTap: onPressed, // Trigger onTap for the button press
       child: Container(
         height: 40,
-        width: displayWeight(context) / 1,
+        width: width??displayWeight(context) / 1,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(30),
