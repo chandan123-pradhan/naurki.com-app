@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class ImageUtils{
   static const String AppLogoImage='assets/icons/app_logo.png';
@@ -22,6 +23,12 @@ class ImageUtils{
   static const String MyPic='assets/icons/my_img.jpeg';
   static const String EditIcon='assets/icons/edit.png';
   static const String HelloIcon='assets/icons/hello.png';
+  static const String AddIcon='assets/icons/add.png';
+  static const String SelectedAdd='assets/icons/addition.png';
+  static const String WorkerIcon='assets/icons/worker.png';
+  static const String ViewIcon='assets/icons/view.png';
+  static const String Calender='assets/icons/calendar.png';
+  static const String SubmitLottie='assets/lotties/confirmation.json';
   static Widget getImage({required String image,double? height, double? width}){
       return Image.asset(image,
       height: height,
@@ -29,6 +36,13 @@ class ImageUtils{
       );
   }
 
+
+static Widget getLottie({required String file,double? height,double? width}){
+  return Lottie.asset(file,
+  width: width,
+  height: height
+  );
+}
 
 
 

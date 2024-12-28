@@ -72,9 +72,9 @@ class DashboardPage extends StatelessWidget {
                       },
                       child: _buildBottomBarItem(
                           context: context,
-                          title: 'Notifications',
-                          selectedIcon: ImageUtils.SelectedNotificationIcon,
-                          icon: ImageUtils.NotificationIcon,
+                          title: 'Alerts',
+                          selectedIcon: ImageUtils.SelectedAdd,
+                          icon: ImageUtils.AddIcon,
                           isSelected: dashboardController.currentPage == 3))
                 ],
               ),

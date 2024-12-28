@@ -97,15 +97,18 @@ Color color=ColorUtils.lightGrey
 
 }){
   return Text(
+    textAlign: TextAlign.center,
     text,
     overflow: TextOverflow.ellipsis,
     style: GoogleFonts.lato(
     textStyle: Theme.of(context).textTheme.displayLarge,
     fontSize: 14,
+    
     color: 
     isHyperLink?ColorUtils.primaryBlue : color,
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.italic,
+    
   ),
   );
 

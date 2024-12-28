@@ -9,12 +9,14 @@ class TextFieldWidgets {
     required String title,
     bool obscureText = false, // Optional parameter for password fields
     String? Function(String?)? validator, // Optional validator
-     Function(String)? onChanged,
-    
+    Function(String)? onChanged,
+    VoidCallback? onCompleteEditing, // Fixed this to VoidCallback
   }) {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
+      onEditingComplete: onCompleteEditing, // This should now work correctly
+      
       decoration: InputDecoration(
         contentPadding: EdgeInsets.zero,
         labelText: title,

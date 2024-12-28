@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorUtils.lightGray,
       body: Container(
         width: displayWeight(context) / 1,
         child: Column(

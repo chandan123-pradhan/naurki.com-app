@@ -1,27 +1,28 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:naukri_app/common_widgets/home_appbar.dart';
+import 'package:naukri_app/common_widgets/alert_page_app_bar.dart';
+import 'package:naukri_app/common_widgets/get_appbar_with_title.dart';
 import 'package:naukri_app/common_widgets/text_widgets.dart';
 import 'package:naukri_app/utils/color_utils.dart';
 import 'package:naukri_app/utils/image_utils.dart';
 import 'package:naukri_app/utils/size_utils.dart';
 
-class AppliedPage extends StatelessWidget {
-  const AppliedPage({super.key});
+class AlertsPage extends StatelessWidget {
+  const AlertsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorUtils.lightGray,
       body: Container(
-        width: displayWeight(context) / 1,
+        width: displayWeight(context),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
+              const SizedBox(
               height: 50,
             ),
-            getHomeAppBar(context),
-            Expanded(
+               getAlertPageAppBar(title: 'Alerts', context: context),
+                 Expanded(
               // Wrap Expanded around the ListView
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 0.0),
@@ -36,7 +37,7 @@ class AppliedPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: headingH6(
                             context: context,
-                            text: 'Your applied jobs',
+                            text: 'Your Alerts',
                             color: ColorUtils.blackColor),
                       ),
                       // const SizedBox(height: 10),
@@ -89,14 +90,14 @@ class AppliedPage extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      height: 30,
-                      width: 40,
+                      height: 25,
+                      width: 25,
                       decoration: BoxDecoration(
                           border:
                               Border.all(width: 1, color: ColorUtils.lightGray),
                           image: const DecorationImage(
                               image: AssetImage(
-                                ImageUtils.PaytmLogo,
+                                ImageUtils.WorkerIcon,
                               ),
                               fit: BoxFit.fill)),
                     ),
@@ -120,13 +121,13 @@ class AppliedPage extends StatelessWidget {
                         SizedBox(
                           height: 20,
                           child: ImageUtils.getImage(
-                              image: ImageUtils.CompanyLogo, height: 15),
+                              image: ImageUtils.ViewIcon, height: 15),
                         ),
                         const SizedBox(
-                          width: 35,
+                          width: 20,
                         ),
                         headingH10(
-                            text: 'Paytm Limited',
+                            text: '200+ Companies',
                             context: context,
                             color: ColorUtils.darkGray)
                       ],
@@ -136,23 +137,25 @@ class AppliedPage extends StatelessWidget {
                   ],
                 ),
               
-                      SizedBox(height: 10,),
+                   
+                           SizedBox(height: 10,),
                   Row(
                       children: [
                         SizedBox(
                           height: 20,
                           child: ImageUtils.getImage(
-                              image: ImageUtils.Status, height: 15),
+                              image: ImageUtils.Calender, height: 10,width: 18),
                         ),
                         const SizedBox(
-                          width: 35,
+                          width: 20,
                         ),
                         headingH10(
-                            text: 'Applied',
+                            text: '02-June-2023',
                             context: context,
-                            color: ColorUtils.green)
+                            color: ColorUtils.darkGray)
                       ],
                     ),
+
                            SizedBox(height: 10,),
                   Row(
                       children: [
@@ -162,7 +165,7 @@ class AppliedPage extends StatelessWidget {
                               image: ImageUtils.Call, height: 10,width: 20),
                         ),
                         const SizedBox(
-                          width: 35,
+                          width: 15,
                         ),
                         headingH10(
                             text: '+91 9065974832',
@@ -170,10 +173,12 @@ class AppliedPage extends StatelessWidget {
                             color: ColorUtils.primaryBlue)
                       ],
                     ),
+
                     
               ],
             )),
       ),
     );
   }
+
 }

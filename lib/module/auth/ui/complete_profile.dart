@@ -89,6 +89,7 @@ class CompleteProfilePage extends StatelessWidget {
                               text: authProvider.employmentDetails[index]
                                   ['employerName']),
                           context: context,
+                          
                           index: index,
                         ),
                         const SizedBox(height: 5),
@@ -156,6 +157,7 @@ class CompleteProfilePage extends StatelessWidget {
                     title: 'Submit',
                     color: ColorUtils.red,
                     onPressed: () {
+                       Navigator.pushReplacementNamed(context, AppRoutes.dashboardPage);
                       // Handle submit logic here
                     },
                   ),
@@ -176,13 +178,14 @@ class CompleteProfilePage extends StatelessWidget {
     required int index,
   }) {
     return TextFieldWidgets.getTextField(
+      onCompleteEditing: (){
+         context.read<AuthProviderController>().updateField(index, 'employerName', controller.text);
+      },
       context: context,
       controller: controller,
       title: 'Employer Name*',
       onChanged: (value) {
-        context
-            .read<AuthProviderController>()
-            .updateField(index, 'employerName', value);
+       
       },
     );
   }
@@ -197,10 +200,11 @@ class CompleteProfilePage extends StatelessWidget {
       context: context,
       controller: controller,
       title: 'Location*',
+        onCompleteEditing: (){
+         context.read<AuthProviderController>().updateField(index, 'location', controller.text);
+      },
       onChanged: (value) {
-        context
-            .read<AuthProviderController>()
-            .updateField(index, 'location', value);
+       
       },
     );
   }
@@ -215,10 +219,11 @@ class CompleteProfilePage extends StatelessWidget {
       context: context,
       controller: controller,
       title: 'Designation*',
+        onCompleteEditing: (){
+         context.read<AuthProviderController>().updateField(index, 'designation', controller.text);
+      },
       onChanged: (value) {
-        context
-            .read<AuthProviderController>()
-            .updateField(index, 'designation', value);
+       
       },
     );
   }
@@ -238,7 +243,7 @@ class CompleteProfilePage extends StatelessWidget {
           controller.text = formattedDate;
           context
               .read<AuthProviderController>()
-              .updateField(index, 'fromDate', formattedDate);
+              .updateFromDate(index, formattedDate);
         }
       },
       child: AbsorbPointer(
@@ -276,7 +281,7 @@ class CompleteProfilePage extends StatelessWidget {
           controller.text = formattedDate;
           context
               .read<AuthProviderController>()
-              .updateField(index, 'toDate', formattedDate);
+              .updateToDate(index, formattedDate);
         }
       },
       child: AbsorbPointer(
