@@ -5,6 +5,7 @@ import 'package:naukri_app/common_widgets/text_widgets.dart';
 import 'package:naukri_app/module/auth/provider/auth_provider_controller.dart';
 import 'package:naukri_app/utils/app_routes.dart';
 import 'package:naukri_app/utils/color_utils.dart';
+import 'package:naukri_app/utils/loading_utils.dart';
 import 'package:naukri_app/utils/size_utils.dart';
 import 'package:provider/provider.dart'; // Import Provider package
 
@@ -131,15 +132,11 @@ class LoginPage extends StatelessWidget {
       String password, 
       AuthProviderController authProvider) async {
     if (formKey.currentState?.validate() ?? false) {
+      LoadingUtils.showLoadingDialog(context);
       // Form validation passed, now proceed with login
-      bool success = await authProvider.login(email, password);
-      if (success) {
-        Navigator.pushReplacementNamed(context, AppRoutes.dashboardPage);
-        
-      } else {
-        // Show an error message
-        
-      }
+    await authProvider.login(email, password);
+    LoadingUtils.dismissLoadingDialog(context);
+    
     }
   }
 

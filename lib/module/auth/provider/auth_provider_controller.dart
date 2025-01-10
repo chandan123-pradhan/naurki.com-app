@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:naukri_app/models/base_response.dart';
+import 'package:naukri_app/module/auth/repository/auth_repository.dart';
 
 class AuthProviderController extends ChangeNotifier {
   // State variable to track the employment details
@@ -12,16 +16,16 @@ class AuthProviderController extends ChangeNotifier {
     },
   ];
 
+AuthRepository authRepository=AuthRepository();
   // Login function (no changes here)
-  Future<bool> login(String email, String password) async {
+  Future<void> login(String email, String password) async {
+    Timer(Duration(seconds: 3), ()async{
+       BaseResponse baseResponse=await authRepository.callLoginApi(email: email,password: password);
+    print(baseResponse);
+    return;
+    });
     // Simulate a login process (you can replace this with your API logic)
    
-
-    if (email == "test@gmail.com" && password == "123456") {
-      return true;  // Successful login
-    } else {
-      return false;  // Failed login
-    }
   }
 
   // Add a new employment detail entry

@@ -28,7 +28,20 @@ class ImageUtils{
   static const String WorkerIcon='assets/icons/worker.png';
   static const String ViewIcon='assets/icons/view.png';
   static const String Calender='assets/icons/calendar.png';
+
+
+
+  ///----------------------Lottie------------------------------------
   static const String SubmitLottie='assets/lotties/confirmation.json';
+  static const String loadingLottie='assets/lotties/loading.json';
+
+
+
+
+
+
+
+
   static Widget getImage({required String image,double? height, double? width}){
       return Image.asset(image,
       height: height,
